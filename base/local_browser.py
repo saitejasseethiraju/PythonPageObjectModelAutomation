@@ -1,5 +1,7 @@
 from selenium.webdriver import Chrome as ChromeDriver, DesiredCapabilities
 from selenium.webdriver.chrome.options import Options as ChromeOptions
+
+import tests
 from Pages import set_driver
 from Pages import set_device
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -33,7 +35,7 @@ class LocalBrowser(object):
             self._driver = self.__start_chrome_browser()
 
         set_driver(self._driver)
-        self.navigate_to_url(hosts.Orange_HRM)
+        self.navigate_to_url(tests.HOSTNAME)
 
     def __start_chrome_browser(self):
         self.browser_opts = ChromeOptions()

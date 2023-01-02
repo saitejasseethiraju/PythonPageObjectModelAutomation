@@ -4,6 +4,7 @@ import tests
 from base.device_manager import DeviceManager
 import hosts.hosts
 import time
+import sys
 
 
 @pytest.mark.incremental
@@ -29,7 +30,24 @@ class BaseTest(unittest.TestCase):
     def OpenHomepage(cls):
         if cls._site is None:
             cls.SetUpSite()
-            cls._device.navigate_to_url(url=hosts.hosts.Orange_HRM)
+            cls._device.navigate_to_url(url=tests.HOSTNAME)
+
+    @classmethod
+    def set_device_name(cls):
+        """
+        User to set actual device name needed for run
+        Method is added to handle CI runs
+        :return:
+        """
+        cmd_line_device_arg = next((arg.split('=')[1] for arg in sys.argv if 'device_name' in arg), tests.device_name)
+        if cls.device_name is not None and 'desktop' not in cmd_line_device_arg.lower():
+            return
+        # if cls.device_name is not None and tests.mobile_safari_default.lower() in cmd_line_device_arg.lower():
+        #     cls.device_name = cmd_line_device_arg
+        elif 'desktop' in cmd_line_device_arg.lower():
+            cls.device_name = cmd_line_device_arg
+        else:
+            cls.device_name = tests.device_name
 
     @classmethod
     def SetUpSite(cls):
