@@ -5,6 +5,7 @@ pipeline{
                 steps{
                     echo "this is first jenkins file"
                     echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                    pip install requirements.exe
                 }
                 }
             }
