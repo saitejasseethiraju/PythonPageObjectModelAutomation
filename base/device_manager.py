@@ -18,6 +18,16 @@ class DeviceManager(object):
             'user-agent': 'Mozilla/5.0 (Linux; Android 9.0.0; SM-G960F Build/R16NW) '
                           'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Mobile Safari/537.36'
         },
+        'Desktop Chrome': {
+            'type': 'desktop',
+            'allow_emulation': False,
+            'os': 'Mac OS X',
+            'browser': 'Chrome',
+            'dp_resolution': '1280x720',
+            'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 '
+                          '(KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36'
+
+        },
     }
 
     def __init__(self, device_name, location, proxy=None, **kwargs):

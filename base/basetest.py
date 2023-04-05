@@ -2,7 +2,6 @@ import pytest
 import unittest
 import tests
 from base.device_manager import DeviceManager
-import hosts.hosts
 import time
 import sys
 
@@ -12,6 +11,7 @@ class BaseTest(unittest.TestCase):
     _site = None
     _device = None
     _device_name =None
+    _maximize_browser = False
     use_chrome_profile = False
 
     @classmethod
@@ -30,7 +30,7 @@ class BaseTest(unittest.TestCase):
     def OpenHomepage(cls):
         if cls._site is None:
             cls.SetUpSite()
-            cls._device.navigate_to_url(url=tests.HOSTNAME)
+            cls._device.navigate_to_url(url=tests.hostname)
 
     @classmethod
     def set_device_name(cls):
@@ -57,7 +57,7 @@ class BaseTest(unittest.TestCase):
                 else None
             cls._device = DeviceManager(device_name=cls.device_name, location='IDE',
                                         chrome_profile=chrome_profile).get_device()
-            cls._device.start_browser()
+            cls._device.start_browser(maximize_browser=cls._maximize_browser)
 
 
 def vtest(Cls):

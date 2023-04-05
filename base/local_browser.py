@@ -30,12 +30,14 @@ class LocalBrowser(object):
         if self._driver is None:
             self.browser = value
 
-    def start_browser(self):
+    def start_browser(self, maximize_browser=False):
         if self._browser.lower() == 'chrome':
             self._driver = self.__start_chrome_browser()
 
         set_driver(self._driver)
-        self.navigate_to_url(tests.HOSTNAME)
+        self.navigate_to_url(tests.hostname)
+        if maximize_browser:
+            self._driver.maximize_window()
 
     def __start_chrome_browser(self):
         self.browser_opts = ChromeOptions()
