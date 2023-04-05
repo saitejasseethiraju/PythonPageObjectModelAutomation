@@ -5,8 +5,11 @@ pipeline{
                 steps{
                     echo "this is first jenkins file"
                     echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                    sh 'virtualenv venv && . venv/bin/activate && pip install -r requirements.txt'
                 }
+            stage('Install Requirements') {
+                steps {
+                    sh 'pip install -r requirements.txt'
+            }
                 }
             }
 }
