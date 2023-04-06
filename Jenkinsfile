@@ -13,13 +13,7 @@ pipeline{
             stage("Install Requirements"){
             steps{
             echo "Branch name is ${branchName}"
-//             virtualenv venv --distribute
-//             . venv/bin/activate
-//             pip install -r requirements.txt
-//             sudo apt-get install python-pip
             bat 'pip install -r requirements.txt'
-//              sh 'virtualenv venv && . venv/bin/activate && pip install -r requirements.txt'
-//                  'sudo easy_install pip; pip install virtualenv'
                 }
                             }
            }
