@@ -16,10 +16,10 @@ pipeline{
                 steps
                 {
                     echo "Branch name is ${branchName}"
-//                     bat 'python -m venv venv'
-//                     bat 'venv/Scripts/activate.bat'
+                    bat 'python -m venv venv'
+                    bat 'venv/Scripts/activate.bat'
 //                     bat 'cd venv/Lib/site-packages'
-                    bat 'pip install -r requirements.txt'
+                    bat 'pip install -r venv/Lib/site-packages/requirements.txt'
                 }
             }
 
