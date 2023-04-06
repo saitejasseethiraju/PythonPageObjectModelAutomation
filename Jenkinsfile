@@ -7,6 +7,7 @@ pipeline{
     stages{
             stage("checkout"){
             steps{
+            echo "Branch name is ${branchName}"
             checkout([$class: 'GitSCM', branches: [[name: "${branchName}"]], extensions: [],
             userRemoteConfigs: [[url: 'https://github.com/saitejasseethiraju/PythonPageObjectModelAutomation.git']]])
                 }
