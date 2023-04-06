@@ -3,7 +3,9 @@ def branchName =  params.branch_name ?: ""
 
 
 pipeline{
-    agent any
+    agent {
+        label 'my-agent'
+    }
     stages{
             stage("Install Requirements"){
             steps{
