@@ -15,5 +15,11 @@ pipeline{
                         """
                                             }
                         }
+
+            stage('Run Tests') {
+            steps {
+                sh 'pytest tests/test_one_open_browser.py'
+                                }
+                   }
             }
         }
