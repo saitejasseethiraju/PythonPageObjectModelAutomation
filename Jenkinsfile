@@ -18,7 +18,7 @@ pipeline{
                     echo "Branch name is ${branchName}"
                     bat 'python -m venv venv'
                     bat 'venv/Scripts/activate.bat'
-                    bat 'cd C:\Users\Sai teja\jenkins_node\workspace\PythonAutomationProject\venv\Lib\site-packages'
+                    bat 'cd C:/Users/Sai teja/jenkins_node/workspace/PythonAutomationProject/venv/Lib/site-packages'
                     bat 'pip install -r requirements.txt'
                 }
             }
@@ -27,7 +27,7 @@ pipeline{
             {
                 steps
                 {
-                    bat 'cd C:\Users\Sai teja\jenkins_node\workspace\PythonAutomationProject'
+                    bat 'cd C:/Users/Sai teja/jenkins_node/workspace/PythonAutomationProject'
                     echo "Test path is ${envTestPath}"
                     bat 'pytest ${envTestPath}'
                 }
