@@ -17,4 +17,11 @@ pipeline{
                 }
                             }
            }
+
+           stage("Run Testcase"){
+            steps{
+            bat 'pytest ${envTestPath}'
+                }
+                            }
+           }
         }
