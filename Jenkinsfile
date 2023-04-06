@@ -16,11 +16,13 @@ pipeline{
             bat 'pip install -r requirements.txt'
                 }
                             }
-           }
+
 
            stage("Run Testcase"){
             steps{
             bat 'pytest ${envTestPath}'
                 }
                             }
+           }
+
            }
