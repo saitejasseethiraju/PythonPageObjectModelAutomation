@@ -24,6 +24,7 @@ pipeline{
             {
                 steps
                 {
+                    echo "Test path is ${envTestPath}"
                     bat 'pytest ${envTestPath}'
                 }
                             }
