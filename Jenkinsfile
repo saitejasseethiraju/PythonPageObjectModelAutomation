@@ -30,8 +30,7 @@ pipeline{
                 steps
                 {
                     echo "Test path is ${envTestPath}"
-                    bat "pip install pytest"
-                    bat 'pytest ${envTestPath}'
+                    bat "pytest ${envTestPath}"
                 }
                             }
            }
