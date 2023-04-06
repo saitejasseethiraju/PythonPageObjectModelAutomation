@@ -27,7 +27,6 @@ pipeline{
             {
                 steps
                 {
-                    bat 'cd C:/Users/Sai teja/jenkins_node/workspace/PythonAutomationProject'
                     echo "Test path is ${envTestPath}"
                     bat 'pytest ${envTestPath}'
                 }
