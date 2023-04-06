@@ -1,7 +1,6 @@
 def envTestPath = params.env_test_path ?: "./tests"
 def branchName =  params.branch_name ?: ""
 
-export TEST_PATH=${envTestPath}
 
 pipeline{
     agent any
