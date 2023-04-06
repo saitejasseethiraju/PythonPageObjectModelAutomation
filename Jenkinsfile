@@ -8,7 +8,7 @@ pipeline{
             stage("Install Requirements"){
             steps{
             echo "Branch name is ${branchName}"
-            pip install -r requirements.txt
+            sh 'pip install -r requirements.txt'
                 }
                             }
            }
