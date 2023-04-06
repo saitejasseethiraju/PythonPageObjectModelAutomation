@@ -18,7 +18,8 @@ pipeline{
 //             pip install -r requirements.txt
 //             sudo apt-get install python-pip
 //             sh 'pip install -r requirements.txt'
-             sh 'virtualenv venv && . venv/bin/activate && pip install -r requirements.txt'
+//              sh 'virtualenv venv && . venv/bin/activate && pip install -r requirements.txt'
+                sh 'sudo easy_install pip; pip install virtualenv'
                 }
                             }
            }
