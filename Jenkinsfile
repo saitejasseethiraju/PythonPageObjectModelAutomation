@@ -16,9 +16,8 @@ pipeline{
                 steps
                 {
                     echo "Branch name is ${branchName}"
-                    bat 'pip install virtualenv'
-                    bat 'virtualenv env'
-                    bat 'env/Scripts/activate'
+                    bat 'python -m venv venv'
+                    bat 'source venv/bin/activate'
                     bat 'pip install -r requirements.txt'
                 }
             }
