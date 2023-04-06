@@ -10,7 +10,7 @@ pipeline{
             stage('Install Requirements') {
                 steps {
                     sh """
-                        source D:\ProjectPythonSelenium\PythonPageObjectModelAutomation\venv\bin\activate
+                        source D:/ProjectPythonSelenium/PythonPageObjectModelAutomation/venv/bin/activate
                         pip install -r requirements.txt
                         """
                                             }
