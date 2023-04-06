@@ -7,8 +7,11 @@ pipeline{
     agent any
     stages{
             stage("checkout"){
+            steps{
             checkout([$class: 'GitSCM', branches: [[name: ${branchName}]], extensions: [],
             userRemoteConfigs: [[url: 'https://github.com/saitejasseethiraju/PythonPageObjectModelAutomation.git']]])
+            }
+
             }
             }
         }
