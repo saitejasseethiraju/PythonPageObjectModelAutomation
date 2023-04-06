@@ -1,10 +1,18 @@
+def envTestPath = params.env_test_path ?: "./tests"
+
+export TEST_PATH=${envTestPath}
+
 pipeline{
     agent any
     stages{
+            stage("checkout"){
+            checkout([$class: 'GitSCM', branches: [[name: ${env_test_path}]], extensions: [],
+            userRemoteConfigs: [[url: 'https://github.com/saitejasseethiraju/PythonPageObjectModelAutomation.git']]])
+            }
             stage("build"){
                 steps{
                     echo "this is first jenkins file"
-                    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+
                             }
                     }
 //             stage('Install Requirements') {
