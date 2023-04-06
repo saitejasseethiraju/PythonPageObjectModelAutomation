@@ -18,7 +18,9 @@ pipeline{
                     echo "Branch name is ${branchName}"
                     bat 'python -m venv venv'
                     bat 'venv/Scripts/activate.bat'
+                    withEnv(["HOME=${env.WORKSPACE}"]) {
                     bat 'pip install -r requirements.txt'
+                    }
                 }
             }
 
