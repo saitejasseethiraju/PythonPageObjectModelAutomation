@@ -10,8 +10,7 @@ pipeline{
             stage('Install Requirements') {
                 steps {
                     sh """
-                        source /etc/profile
-                        source /Users/jenkins/PycharmProjects/voltron/venv/bin/activate
+                        source D:\ProjectPythonSelenium\PythonPageObjectModelAutomation\venv\bin\activate
                         pip install -r requirements.txt
                         """
                                             }
