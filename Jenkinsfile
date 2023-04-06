@@ -16,9 +16,8 @@ pipeline{
                 steps
                 {
                     echo "Branch name is ${branchName}"
-//                     bat 'python -m venv venv'
+                    bat 'python -m venv venv'
                     bat 'venv/Scripts/activate.bat'
-//                     bat 'dir venv\\Lib\\site-packages'
                     bat 'pip install -r requirements.txt'
                 }
             }
