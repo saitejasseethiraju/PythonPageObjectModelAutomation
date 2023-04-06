@@ -19,6 +19,7 @@ pipeline{
                     bat 'python -m venv venv'
                     bat 'venv/Scripts/activate.bat'
                     withEnv(["HOME=${env.WORKSPACE}"]) {
+                    echo "HOME=${env.WORKSPACE}"
                     bat 'pip install -r requirements.txt'
                     }
                 }
