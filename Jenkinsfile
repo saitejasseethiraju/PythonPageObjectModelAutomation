@@ -9,7 +9,11 @@ pipeline{
                     }
             stage('Install Requirements') {
                 steps {
-                    sh 'pip install -r requirements.txt'
+                    sh """
+                        source /etc/profile
+                        source /Users/jenkins/PycharmProjects/voltron/venv/bin/activate
+                        pip install -r requirements.txt
+                        """
                                             }
                         }
             }
